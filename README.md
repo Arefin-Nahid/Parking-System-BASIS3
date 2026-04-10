@@ -100,7 +100,7 @@ The FSM is **transaction-based** — it returns to `IDLE` after each operation, 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/smart-parking-system.git
+   git clone https://github.com/Arefin-Nahid/Parking-System-BASIS3
    cd smart-parking-system
    ```
 
