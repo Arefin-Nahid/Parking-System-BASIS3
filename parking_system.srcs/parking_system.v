@@ -46,8 +46,8 @@
 //  NUM_SLOTS - 8 parking slots (matches 8 LEDs on Basys3)
 //  NUM_CARS  - 16 car IDs (4-bit SW input)
 //  CLK_FREQ  - 100 MHz (Basys3 oscillator)
-//  TICK_DIV  - 100 000 000 ? 1 Hz time units (1 unit = 1 second)
-//  FEE_RATE  - 2 fee units per second
+//  TICK_DIV  - 1_000_000_000 => 1 tick = 10 seconds (fits 30-bit param safely)
+//  FEE_RATE  - 1 unit per 10-second tick (6 per min, 360 per hour)
 //  EMPTY_ID  - 4'hF reserved; not assignable as car ID
 // =============================================================================
 
@@ -57,8 +57,8 @@ module parking_system #(
     parameter ID_BITS    = 4,
     parameter SLOT_BITS  = 3,
     parameter CLK_FREQ   = 100_000_000,
-    parameter TICK_DIV   = 100_000_000,
-    parameter FEE_RATE   = 16'd2,
+    parameter TICK_DIV   = 1_000_000_000,  // 1 tick = 10 seconds (safe 30-bit value)
+    parameter FEE_RATE   = 16'd1,           // 1 unit per 10 seconds (6/min, 360/hr)
     parameter [ID_BITS-1:0] EMPTY_ID = {ID_BITS{1'b1}}
 )(
     input  wire        clk,

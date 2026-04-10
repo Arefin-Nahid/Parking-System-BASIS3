@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Fri Apr 10 15:44:37 2026
+| Date         : Fri Apr 10 18:36:18 2026
 | Host         : Paraffin-Bluff running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file parking_system_control_sets_placed.rpt
 | Design       : parking_system
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    53 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   121 |
+| Unused register locations in slices containing registers |   120 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              44 |           11 |
-| No           | No                    | Yes                    |             551 |          125 |
-| No           | Yes                   | No                     |              16 |            2 |
+| No           | No                    | No                     |              52 |           14 |
+| No           | No                    | Yes                    |             464 |          110 |
+| No           | Yes                   | No                     |              16 |            3 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             724 |          256 |
+| Yes          | No                    | Yes                    |             724 |          259 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,62 +70,62 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |              Enable Signal             |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_1[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_18[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_17[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_14[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_11[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_7[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_21[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_9[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_6[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_16[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_3[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_23[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_19[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_13[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_2[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_4[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_20[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_22[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_8[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/active_car                      | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_15[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_car_id[3]_i_1_n_0           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_i_1_n_0         | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_0[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_query_id[3]_i_1_n_0       | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_5[0]           | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/FSM_sequential_state[3]_i_1_n_0 | rst_IBUF                         |                3 |              4 |         1.33 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_12[0]          | rst_IBUF                         |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_10[0]          | rst_IBUF                         |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG |                                        | u_alu/duration_stage[15]_i_1_n_0 |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG | u_ctrl/disp_duration[15]_i_1_n_0       | rst_IBUF                         |                3 |             16 |         5.33 |
-|  clk_IBUF_BUFG | u_ctrl/disp_fee[15]_i_1_n_0            | rst_IBUF                         |                3 |             16 |         5.33 |
-|  clk_IBUF_BUFG | u_ctrl/alu_opcode_reg[1]_0[0]          | rst_IBUF                         |                3 |             16 |         5.33 |
-|  clk_IBUF_BUFG | u_ctrl/E[0]                            | rst_IBUF                         |                3 |             16 |         5.33 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_10[0]       | rst_IBUF                         |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | u_time/tick_reg_n_0                    | rst_IBUF                         |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_12[0]       | rst_IBUF                         |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_14[0]       | rst_IBUF                         |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_3[0]        | rst_IBUF                         |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_1[0]        | rst_IBUF                         |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_4[0]        | rst_IBUF                         |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_5[0]        | rst_IBUF                         |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_15[0]       | rst_IBUF                         |                6 |             32 |         5.33 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_8[0]        | rst_IBUF                         |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_7[0]        | rst_IBUF                         |               15 |             32 |         2.13 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_9[0]        | rst_IBUF                         |               23 |             32 |         1.39 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_2[0]        | rst_IBUF                         |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_0[0]        | rst_IBUF                         |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_11[0]       | rst_IBUF                         |               15 |             32 |         2.13 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_13[0]       | rst_IBUF                         |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_6[0]        | rst_IBUF                         |               15 |             32 |         2.13 |
-|  clk_IBUF_BUFG |                                        |                                  |               11 |             72 |         6.55 |
-|  clk_IBUF_BUFG |                                        | rst_IBUF                         |              125 |            551 |         4.41 |
-+----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
++----------------+----------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |              Enable Signal             | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_20[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_22[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_17[0]          | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_4[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_query_id[3]_i_1_n_0       | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_car_id[3]_i_1_n_0           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_2[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_0[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_i_1_n_0         | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_13[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_8[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_15[0]          | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_16[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_23[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_21[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_5[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_6[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_14[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_11[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_9[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_7[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_3[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_10[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_1[0]           | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_18[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_12[0]          | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/mem_write_en_reg_19[0]          | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/FSM_sequential_state[3]_i_1_n_0 | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/active_car                      | rst_IBUF         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/E[0]                            | rst_IBUF         |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/disp_fee[15]_i_1_n_0            | rst_IBUF         |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG |                                        | u_time/SS[0]     |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG | u_ctrl/alu_opcode_reg[2]_0[0]          | rst_IBUF         |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG | u_ctrl/disp_duration[15]_i_1_n_0       | rst_IBUF         |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_12[0]       | rst_IBUF         |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_11[0]       | rst_IBUF         |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_1[0]        | rst_IBUF         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_15[0]       | rst_IBUF         |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_5[0]        | rst_IBUF         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_14[0]       | rst_IBUF         |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_3[0]        | rst_IBUF         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_13[0]       | rst_IBUF         |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_8[0]        | rst_IBUF         |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_9[0]        | rst_IBUF         |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_2[0]        | rst_IBUF         |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_4[0]        | rst_IBUF         |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_7[0]        | rst_IBUF         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_0[0]        | rst_IBUF         |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_10[0]       | rst_IBUF         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | u_time/tick_reg_n_0                    | rst_IBUF         |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | u_ctrl/timer_record_en_reg_6[0]        | rst_IBUF         |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG |                                        |                  |               14 |             88 |         6.29 |
+|  clk_IBUF_BUFG |                                        | rst_IBUF         |              110 |            464 |         4.22 |
++----------------+----------------------------------------+------------------+------------------+----------------+--------------+
 
 

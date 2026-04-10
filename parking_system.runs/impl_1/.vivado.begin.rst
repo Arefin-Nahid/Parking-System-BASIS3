@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="ASUS" Host="PARAFFIN-BLUFF" Pid="16556" HostCore="8" HostMemory="016859099136">
+    <Process Command="vivado.bat" Owner="ASUS" Host="PARAFFIN-BLUFF" Pid="13716" HostCore="8" HostMemory="016859099136">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="ASUS" Host="PARAFFIN-BLUFF" Pid="11608" HostCore="8" HostMemory="016859099136">
+    <Process Command="vivado.bat" Owner="ASUS" Host="PARAFFIN-BLUFF" Pid="12844" HostCore="8" HostMemory="016859099136">
     </Process>
 </ProcessHandle>

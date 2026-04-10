@@ -390,15 +390,18 @@ module control_unit #(
                 end
 
                 // ============================================================
-                // CALC_DURATION - compute elapsed seconds (1-cycle ALU)
+                // CALC_DURATION - compute elapsed time (1-cycle ALU).
+                // Display stays on car ID (mode 01) while calculating.
+                // Duration is stored internally but NOT shown on display -
+                // the user sees the fee directly instead (more realistic UX).
                 // ============================================================
                 S_CALC_DURATION: begin
-                    disp_mode <= 2'b10;   // show duration while computing
+                    disp_mode <= 2'b01;   // keep showing car ID while computing
                     if (!alu_ready) begin
                         alu_ready <= 1'b1;
                     end else begin
                         alu_ready     <= 1'b0;
-                        disp_duration <= alu_duration;
+                        disp_duration <= alu_duration;  // saved for internal use
                         // Immediately request fee calculation
                         alu_opcode <= OP_CALC_FEE;
                         state      <= S_CALC_FEE;
@@ -406,13 +409,15 @@ module control_unit #(
                 end
 
                 // ============================================================
-                // CALC_FEE - multiply duration ? rate (1-cycle ALU)
+                // CALC_FEE - multiply duration x rate (pipelined ALU).
+                // fee_wait gives the multiplier pipeline time to settle.
+                // Switches display directly to fee (mode 11) - no duration step.
                 // ============================================================
                 S_CALC_FEE: begin
                     if (fee_wait == 2'b10) begin
                         fee_wait  <= 2'b00;
                         disp_fee  <= alu_fee;
-                        disp_mode <= 2'b11;
+                        disp_mode <= 2'b11;   // show fee - first thing user sees
                         state     <= S_WAIT_PAYMENT;
                     end else begin
                         fee_wait <= fee_wait + 2'b01;
@@ -420,14 +425,13 @@ module control_unit #(
                 end
 
                 // ============================================================
-                // WAIT_PAYMENT - FSM locked here until btn_pay pressed
-                // Slot remains occupied; car_status remains INSIDE
-                // This enforces payment before exit (corner case #4)
+                // WAIT_PAYMENT - FSM locked until BTNR (pay) is pressed.
+                // Display shows fee the whole time.
+                // Entry/exit buttons are ignored here (corner case #4).
                 // ============================================================
                 S_WAIT_PAYMENT: begin
-                    disp_mode <= 2'b11;   // keep showing fee
+                    disp_mode <= 2'b11;   // keep showing fee until paid
                     if (btn_pay) state <= S_FREE_SLOT;
-                    // No transition on btn_exit or btn_entry - locked
                 end
 
                 // ============================================================
