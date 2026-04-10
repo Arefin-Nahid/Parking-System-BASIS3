@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/debounce.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debounce
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/parking_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module parking_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/parking_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module parking_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/seg7_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module seg7_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/time_tracker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module time_tracker
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Projects/parking_system/parking_system.srcs/parking_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module parking_system

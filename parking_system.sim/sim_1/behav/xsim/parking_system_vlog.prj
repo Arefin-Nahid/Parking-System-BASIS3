@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../parking_system.srcs/control_unit.v" \
+"../../../../parking_system.srcs/debounce.v" \
+"../../../../parking_system.srcs/parking_alu.v" \
+"../../../../parking_system.srcs/parking_memory.v" \
+"../../../../parking_system.srcs/seg7_display.v" \
+"../../../../parking_system.srcs/time_tracker.v" \
+"../../../../parking_system.srcs/parking_system.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

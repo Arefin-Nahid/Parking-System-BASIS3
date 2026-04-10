@@ -1,0 +1,12 @@
+0.7
+2020.2
+May  7 2023
+15:24:31
+D:/Projects/parking_system/parking_system.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/control_unit.v,1775809374,verilog,,D:/Projects/parking_system/parking_system.srcs/debounce.v,,control_unit,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/debounce.v,1775809507,verilog,,D:/Projects/parking_system/parking_system.srcs/parking_alu.v,,debounce,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/parking_alu.v,1775771069,verilog,,D:/Projects/parking_system/parking_system.srcs/parking_memory.v,,parking_alu,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/parking_memory.v,1775771069,verilog,,D:/Projects/parking_system/parking_system.srcs/seg7_display.v,,parking_memory,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/parking_system.v,1775771069,verilog,,,,parking_system,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/seg7_display.v,1775771069,verilog,,D:/Projects/parking_system/parking_system.srcs/time_tracker.v,,seg7_display,,,,,,,,
+D:/Projects/parking_system/parking_system.srcs/time_tracker.v,1775771069,verilog,,D:/Projects/parking_system/parking_system.srcs/parking_system.v,,time_tracker,,,,,,,,
